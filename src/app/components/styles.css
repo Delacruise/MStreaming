@@ -18,6 +18,11 @@
 
 }
 
+.no__img {
+  width: 250px;
+  height: 250px;
+}
+
 /* Style the scrollbar track */
 ::-webkit-scrollbar {
   width: 10px; /* Adjust the width as needed */
