@@ -15,7 +15,10 @@
     "@fortawesome/free-regular-svg-icons": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@prisma/client": "^5.5.2",
+    "axios": "^1.6.0",
     "babel-plugin-macros": "^3.1.0",
+    "cors": "^2.8.5",
     "next": "14.0.0",
     "react": "^18",
     "react-dom": "^18"
@@ -25,6 +28,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.0.0",
     "postcss": "^8",
+    "prisma": "^5.5.2",
     "tailwindcss": "^3"
   }
 }

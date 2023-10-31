@@ -3,8 +3,9 @@ import './globals.css'
 import Search from './components/search'
 import Footer from '../app/components/footer';
 import Menu from '../app/components/menu';
+import React from 'react';
 
-const inter = Inter({ subsets: ['latin'] })
+
 
 export const metadata = {
   title: 'Music Streaming App',
@@ -14,10 +15,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
-      <body className={inter.className}>
-        <div className='flex'>
-          <Menu></Menu>
-          <div className='w-full'>
+      <body className=''>
+        <div className='flex '>
+          <div className='max-w-xs p-4 h-screen bg-gray-500 text-gray-800'>
+            <Menu></Menu>
+          </div>
+          <div className='w-screen overflow-hidden'>
             <Search></Search>
             {children}
           </div>
