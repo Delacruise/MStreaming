@@ -5,14 +5,10 @@ import Image from 'next/image';
 import PlaylistList from './components/playlist';
 import Artists from './components/artists';
 import Albums from './components/albums';
-import playListGet from '../app/api/playListGet/route';
-import { fromJSON } from 'postcss';
-
+import playListGet from './api/getPlaylist/route';
+import { setCookieObj, getCookieObj } from '../app/helpers/helpers';
 
 export default function Home() {
-
-
-
 
   useEffect(() => {
 
