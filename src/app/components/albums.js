@@ -17,7 +17,6 @@ export default function Albums() {
   };
 
   useEffect(() => {
-    debugger;
     if (albumsData.length == 0 || albumsData[0] == undefined) {
       fetchAlbumsData();
     }
