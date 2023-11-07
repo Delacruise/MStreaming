@@ -583,7 +583,7 @@ export default function Albums() {
             <div className='flex gap-4 flex-wrap justify-start'>
               {albumsData.map((album) => (
                 <a
-                  href={album.link}
+                  href={`/pages/album?id=${album.id}`}
                   target='_blank'
                   rel='noopener noreferrer'
                   className='text-blue-400 mb-4'
