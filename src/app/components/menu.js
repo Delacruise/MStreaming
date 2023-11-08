@@ -15,9 +15,9 @@ export default function menu() {
           <li className='menu__item '>
             <Link href='/pages/albums'>Albums</Link>
           </li>
-          <li className='menu__item '>
+          {/* <li className='menu__item '>
             <Link href='/pages/playlists'>Playlists</Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </>

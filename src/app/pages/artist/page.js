@@ -98,9 +98,7 @@ export default function Artist() {
             {trackListData.map((track) => (
               <a
                 href={track.link}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='text-blue-400'
+
               >
                 <div
                   key={track.id}

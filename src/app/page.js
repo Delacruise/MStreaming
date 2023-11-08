@@ -17,9 +17,9 @@ export default function Home() {
   return (
     <main className='h-fit'>
       <div className='h-40 bg-blue-600 p-4'>Hero Banner</div>
-      <div className='h-fit bg-purple-600 p-4 pr-8 '>
+      {/* <div className='h-fit bg-purple-600 p-4 pr-8 '>
         <PlaylistList />
-      </div>
+      </div> */}
       <div className='h-fit bg-yellow-600 p-4 pr-8'>
         <Artists />
       </div>

@@ -87,7 +87,7 @@ export default function Album() {
             className='tracksContent flex w-full items-center bg-white text-gray-800 border-b border-gray-100'
             key={track.id}
           >
-            <div className='trackNom p-4 pb-2 pt-3 text-center'>{index+1}</div>
+            <div className='trackNom p-4 pb-2 pt-3 text-center'>{index}</div>
             <div className='trackImage p-4 pb-2 pt-3'>
               <Image
                 src={track.album.cover_small}

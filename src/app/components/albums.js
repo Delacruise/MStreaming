@@ -30,13 +30,7 @@ export default function Albums() {
         </h1>
         <div className='flex gap-4 playlist__scroller flex gap-4 overflow-x-auto'>
           {albumsData.map((album) => (
-            <a
-              href={album.link}
-              target='_blank'
-              rel='noopener noreferrer'
-              className='text-blue-400 mb-4'
-              key={album.id}
-            >
+            <a href={`/pages/album?id=${album.id}`} key={album.id}>
               <div
                 key={album.id}
                 className='p-4 rounded-md p-2 bg-white h-full drop-shadow-md inline-block'
@@ -74,7 +68,7 @@ export default function Albums() {
               </div>
             </a>
           ))}
-          <a href='' target='_blank' className='text-blue-400 text-sm mb-4'>
+          <a href='/pages/albums'>
             <div className='p-4 rounded-md p-2 bg-white h-full drop-shadow-md inline-block default-width mr-4'>
               <div className='bg-indigo-600 rounded-md p-4 h-full'>
                 <h2 className='playlist__title text-white text-xl font-bold text-center h-full'>

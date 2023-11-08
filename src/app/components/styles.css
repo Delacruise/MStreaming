@@ -1,5 +1,5 @@
 .menu__item {
-  @apply pt-2 pb-2 rounded-md bg-gray-300 p-10 cursor-pointer hover:bg-gray-400 mb-4 ;
+  @apply pt-2 pb-2 rounded-md bg-gray-300 p-10 cursor-pointer hover:bg-gray-400 mb-4;
 }
 
 .playlist__img {
@@ -7,15 +7,14 @@
 }
 
 .default-width {
-  width:250px;
+  width: 250px;
 }
 
 .playlist__title {
-  max-width:218px;
+  max-width: 218px;
 }
 
 .main__size {
-
 }
 
 .no__img {
@@ -26,13 +25,13 @@
 /* Style the scrollbar track */
 ::-webkit-scrollbar {
   width: 10px; /* Adjust the width as needed */
-  height: 8px; 
+  height: 8px;
 }
 
 /* Style the scrollbar thumb (the draggable part) */
 ::-webkit-scrollbar-thumb {
   background: #df13c3; /* Background color of the thumb */
-  border-radius: 5px;/* Rounded corners for the thumb */
+  border-radius: 5px; /* Rounded corners for the thumb */
 }
 
 /* Style the scrollbar track on hover */
@@ -42,10 +41,15 @@
 }
 
 ::-webkit-scrollbar-track {
-  margin-bottom:10px
+  margin-bottom: 10px;
 }
 
 /* Style the scrollbar thumb on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #ff04ff; /* Change the thumb color on hover */
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
 }

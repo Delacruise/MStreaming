@@ -1,15 +1,15 @@
 import axios, { isCancel, AxiosError } from 'axios';
 import { NextResponse } from 'next/server';
-export default async function GET() {
-  const albumUrl = 'https://api.deezer.com/chart/0/albums';
+export default async function GET(id) {
+  const albumUrl = 'https://api.deezer.com/album/' + id;
   const url = 'https://corsproxy.io/?' + encodeURIComponent(albumUrl);
 
   try {
     const response = await axios.get(url);
-    const albums = response.data.data;
-    if (albums) {
-      console.log('ALBUMS DATA API CALL: ', albums);
-      return albums;
+    const album = response.data;
+    if (album) {
+      console.log('ALBUM API CALL: ', album);
+      return album;
     }
   } catch (error) {
     console.log('WE HAVE AN ERROR : ', error);

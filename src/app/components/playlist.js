@@ -35,10 +35,7 @@ export default function PlaylistList() {
         <div className='playlist__scroller flex gap-4 overflow-x-auto'>
           {playlistData.map((playlist) => (
             <a
-              href={playlist.link}
-              target='_blank'
-              rel='noopener noreferrer'
-              className='text-blue-400 mb-4'
+              href="#"
               key={playlist.id}
             >
               <div
