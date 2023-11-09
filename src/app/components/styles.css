@@ -66,3 +66,13 @@ input:focus {
   @apply text-white text-lg truncate text-center;
   max-width: 218px;
 }
+
+.menuItem {
+  @apply m-4 cursor-pointer hover:text-blue-600
+}
+
+.activeMenu {
+  @apply border-red-600 border-b-2 ;
+}
+
+

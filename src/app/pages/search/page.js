@@ -9,7 +9,7 @@ export default function Search() {
   const [trackData, setTrackData] = useState();
   const [albumData, setAlbumData] = useState();
   const [artistData, setArtistData] = useState();
-  const [onPageSearchTerm, setOnPageSearchTerm] = useState('');
+  const [visibleDiv, setVisibleDiv] = useState(null);
 
   const router = useRouter();
 
@@ -21,7 +21,6 @@ export default function Search() {
     var paramID = urlParams.toString();
     var parts = paramID.split('=');
     searchQ = parts[1];
-    setOnPageSearchTerm(parts[1]);
   }
 
   function groupObjectsByType(data) {
@@ -57,6 +56,10 @@ export default function Search() {
     }
   };
 
+  const showDiv = (divId) => {
+    setVisibleDiv(divId);
+  };
+
   useEffect(() => {
     if (searchResults == undefined && searchQ == '') {
       getSearchTerm();
@@ -73,16 +76,62 @@ export default function Search() {
       <>
         <div className='p-4 bg-gray-700 text-gray-200 h-full'>
           <div className='menu flex gap-4 border-b border-gray-200'>
-            <div className='menuItem m-4 ml-0 mb-0 active border-red-600 border-b-2'>
+            <div
+              className={`menuItem m-4  ${
+                visibleDiv === null ? 'activeMenu' : ''
+              } `}
+              onClick={() => showDiv(null)}
+            >
               All
             </div>
-            {trackData ? <div className='menuItem m-4 '>Track</div> : ''}
-            {artistData ? <div className='menuItem m-4'>Artist</div> : ''}
-            {albumData ? <div className='menuItem m-4'>Album</div> : ''}
+            {trackData ? (
+              <div
+                className={`menuItem m-4  ${
+                  visibleDiv === 'Tracks' ? 'activeMenu' : ''
+                } `}
+                onClick={() => showDiv('Tracks')}
+              >
+                Tracks
+              </div>
+            ) : (
+              ''
+            )}
+            {artistData ? (
+              <div
+                className={`menuItem m-4  ${
+                  visibleDiv === 'Artists' ? 'activeMenu' : ''
+                } `}
+                onClick={() => showDiv('Artists')}
+              >
+                Artists
+              </div>
+            ) : (
+              ''
+            )}
+            {albumData ? (
+              <div
+                className={`menuItem m-4  ${
+                  visibleDiv === 'Albums' ? 'activeMenu' : ''
+                } `}
+                onClick={() => showDiv('Albums')}
+              >
+                Albums
+              </div>
+            ) : (
+              ''
+            )}
           </div>
           {/* TRACK RESULTS */}
           {trackData ? (
-            <div>
+            <div
+              id='allTracks'
+              style={{
+                display:
+                  visibleDiv === 'Tracks' || visibleDiv === null
+                    ? 'block'
+                    : 'none',
+              }}
+            >
               <div className='title text-3xl font-bold m-4 ml-0 mb-0'>
                 TRACKS
               </div>
@@ -128,7 +177,15 @@ export default function Search() {
           )}
           {/* ALBUM RESULTS */}
           {albumData ? (
-            <div>
+            <div
+              id='allAlbums'
+              style={{
+                display:
+                  visibleDiv === 'Albums' || visibleDiv === null
+                    ? 'block'
+                    : 'none',
+              }}
+            >
               <div className='title text-3xl font-bold m-4 ml-0 mb-0'>
                 ALBUMS
               </div>
@@ -161,7 +218,15 @@ export default function Search() {
           )}
           {/* ARTIST RESULTS */}
           {artistData ? (
-            <div>
+            <div
+              id='allArtists'
+              style={{
+                display:
+                  visibleDiv === 'Artists' || visibleDiv === null
+                    ? 'block'
+                    : 'none',
+              }}
+            >
               <div className='title text-3xl font-bold m-4 ml-0 mb-0'>
                 ARTISTS
               </div>
