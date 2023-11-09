@@ -54,6 +54,7 @@ export default function Artist() {
 
   useEffect(() => {
     if (artistData == undefined) {
+
       fetchArtistData();
     }
 
@@ -73,55 +74,48 @@ export default function Artist() {
   ) {
     return (
       <>
-        <div className='top__section flex p-4 bg-purple-600'>
+        <div className='top__section flex p-4 bg-gray-600'>
           <div className='left__section flex'>
             <Image
               src={artistData.picture_medium}
               alt={artistData.name}
               width={250}
               height={250}
-              className='rounded-lg border-4 border-white'
+              className='rounded-lg border-4'
             />
             <div className='ml-4'>
-              <div className='font-semibold text-white tracking-wide text-xl'>
-                {artistData.name}
-              </div>
-              <div>{artistData.nb_fan}</div>
+              <div className='pb-0 title '>{artistData.name}</div>
+              <div className='text-white'>Fans: {artistData.nb_fan}</div>
             </div>
           </div>
           <div className='right__section'></div>
         </div>
         <div className='menu'></div>
-        <div className='tracks__section bg-gray-600 p-4'>
-          <h1 className='font-semibold tracking-wide text-xl'>Top Tracks</h1>
+        <div className='tracks__section bg-gray-700 p-4'>
+          <h1 className='title'>Top Tracks</h1>
           <div className=''>
             {trackListData.map((track) => (
-              <a
-                href={track.link}
-
-              >
+              <a href='#'>
                 <div
                   key={track.id}
                   id={track.id}
-                  className='p-2 rounded-md  h-full flex'
+                  className='p-2 rounded-md h-full flex items-center'
                 >
                   <Image
                     src={track.album.cover_small}
                     alt={track.title}
                     width={56}
                     height={56}
-                    className='rounded-md w-max'
+                    className='rounded-md w-max mr-4'
                   />
-                  <div className='text-white font-semibold text-md truncate pl-4'>
-                    {track.title}
-                  </div>
+                  <div className='cardTitle'>{track.title}</div>
                 </div>
               </a>
             ))}
           </div>
         </div>
-        <div className='albums__section bg-indigo-600 p-4 h-fit pb-24'>
-          <h1 className='font-semibold tracking-wide text-xl mb-4'>Albums</h1>
+        <div className='albums__section bg-gray-600 p-4 h-fit pb-24'>
+          <h1 className='title'>Albums</h1>
           <div className='flex flex-wrap gap-x-4 gap-y-20 justify-between'>
             {albumData.map((album) => (
               <div className='no__img'>
@@ -131,16 +125,20 @@ export default function Artist() {
                     alt={album.title}
                     width={250}
                     height={250}
-                    className='rounded-lg w-max'
+                    className='playlist__img rounded-lg w-max'
                   />
                 ) : (
-                  <div className='no__img rounded-xl border-2 p-4'>
-                    'No image'
-                  </div>
+                  <Image
+                    src='/no_image.jpg'
+                    alt='No Image'
+                    width={250}
+                    height={250}
+                    className='playlist__img rounded-md w-max'
+                  />
                 )}
 
-                <div className='truncate pt-2'>{album.title}</div>
-                <div className='truncate pt-2 text-xs font-thin'>
+                <div className='cardTitle'>{album.title}</div>
+                <div className='truncate pt-2 text-xs font-thin text-white'>
                   {album.release_date}
                 </div>
               </div>

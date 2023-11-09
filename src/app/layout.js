@@ -15,17 +15,20 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
-      <body className=''>
-        <div className='flex '>
-          <div className='max-w-xs p-4 h-screen bg-gray-500 text-gray-800'>
-            <Menu></Menu>
+      <body className='bg-gray-800 relative'>
+        <div className='red__bar__left'></div>
+        <div className=' drop-shadow-2xl m-16'>
+          <div className='flex h-fit bg-gray-900'>
+            <div className='p-7 pt-4 bg-gray-800 text-gray-200'>
+              <Menu></Menu>
+            </div>
+            <div className='w-screen overflow-hidden'>
+              <Search></Search>
+              {children}
+            </div>
           </div>
-          <div className='w-screen overflow-hidden'>
-            <Search></Search>
-            {children}
-          </div>
+          <Footer></Footer>
         </div>
-        <Footer></Footer>
       </body>
     </html>
   );

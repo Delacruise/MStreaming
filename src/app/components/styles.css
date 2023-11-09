@@ -1,5 +1,9 @@
 .menu__item {
-  @apply pt-2 pb-2 rounded-md bg-gray-300 p-10 cursor-pointer hover:bg-gray-400 mb-4;
+  @apply pt-2 pb-2 p-10 cursor-pointer mb-4;
+}
+
+.menu__item:hover {
+  @apply text-blue-600;
 }
 
 .playlist__img {
@@ -30,14 +34,14 @@
 
 /* Style the scrollbar thumb (the draggable part) */
 ::-webkit-scrollbar-thumb {
-  background: #df13c3; /* Background color of the thumb */
+  background: #63669b; /* Background color of the thumb */
   border-radius: 5px; /* Rounded corners for the thumb */
 }
 
 /* Style the scrollbar track on hover */
 ::-webkit-scrollbar-track:hover {
-  background: #aaa; /* Change the background color on hover */
-  border-radius: 5px;
+  /* background: #6d6d6d; /* 
+  border-radius: 5px; */
 }
 
 ::-webkit-scrollbar-track {
@@ -46,10 +50,19 @@
 
 /* Style the scrollbar thumb on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #ff04ff; /* Change the thumb color on hover */
+  background: #63669b; /* Change the thumb color on hover */
 }
 
 textarea:focus,
 input:focus {
   outline: none;
+}
+
+.card {
+  @apply rounded-md h-full drop-shadow-md;
+}
+
+.cardTitle {
+  @apply text-white text-lg truncate text-center;
+  max-width: 218px;
 }

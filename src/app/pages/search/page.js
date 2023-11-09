@@ -71,7 +71,7 @@ export default function Search() {
   ) {
     return (
       <>
-        <div className='p-4 bg-white text-gray-800 h-full'>
+        <div className='p-4 bg-gray-700 text-gray-200 h-full'>
           <div className='menu flex gap-4 border-b border-gray-200'>
             <div className='menuItem m-4 ml-0 mb-0 active border-red-600 border-b-2'>
               All
@@ -108,7 +108,7 @@ export default function Search() {
                           className='playlist__img rounded-md w-max'
                         />
                       </div>
-                      <div className='name'>{track.title}</div>
+                      <div className='cardTitle'>{track.title}</div>
                     </div>
                     <div className='menuItem m-4 w-2/5'>
                       {track.artist.name}
@@ -135,7 +135,7 @@ export default function Search() {
               <div className='results p-4'>
                 <div
                   id='album'
-                  className='border-b border-gray-200 flex w-full flex-wrap'
+                  className='border-b border-gray-200 flex w-full flex-wrap justify-between'
                 >
                   {albumData.map((album) => (
                     <a href={`/pages/album?id=${album.id}`}>
@@ -147,7 +147,7 @@ export default function Search() {
                           height={250}
                           className='rounded-md w-max'
                         />
-                        <div>
+                        <div className='cardTitle'>
                           {album.title} - {album.artist.name}
                         </div>
                       </div>
@@ -168,7 +168,7 @@ export default function Search() {
               <div className='results p-4'>
                 <div
                   id='artist'
-                  className='border-b border-gray-200 flex w-full flex-wrap'
+                  className='border-gray-200 flex w-full flex-wrap justify-between'
                 >
                   {artistData.map((artist) => (
                     <a href={`/pages/artist?id=${artist.id}`}>
@@ -180,7 +180,7 @@ export default function Search() {
                           height={250}
                           className='rounded-md w-max'
                         />
-                        <div>{artist.name}</div>
+                        <div className='cardTitle'>{artist.name}</div>
                       </div>
                     </a>
                   ))}

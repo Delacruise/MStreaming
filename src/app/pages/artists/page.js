@@ -1390,32 +1390,24 @@ export default function Artists() {
   return (
     <>
       <div className='p-4'>
-        <h1 className='tracking-wider font-semibold text-2xl pb-8'>
-          Top Artists
-        </h1>
-        <div className='flex flex-wrap gap-4'>
+        <h1 className='title'>Top Artists</h1>
+        <div className='flex flex-wrap gap-4 justify-evenly'>
           {artistsData.map((artist) => (
             <a
               href={`/pages/artist?id=${artist.id}`}
-              rel='noopener noreferrer'
               className='text-blue-400 mb-4'
               key={artist.id}
             >
-              <div
-                key={artist.id}
-                className='p-4 rounded-md p-2 bg-white h-full drop-shadow-md inline-block'
-              >
+              <div key={artist.id} className='card'>
                 <Image
                   src={artist.picture_medium}
                   alt={artist.name}
                   width={250}
                   height={250}
-                  className='playlist__img rounded-md rounded-b-none w-max'
+                  className='playlist__img rounded-md w-max'
                 />
-                <div className='bg-yellow-600 rounded-t-none rounded-md p-4'>
-                  <h2 className='playlist__title text-white text-xl font-bold truncate'>
-                    {artist.name}
-                  </h2>
+                <div className='p-4'>
+                  <h2 className='cardTitle'>{artist.name}</h2>
                 </div>
               </div>
             </a>

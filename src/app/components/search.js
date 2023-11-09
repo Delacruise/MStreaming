@@ -18,17 +18,17 @@ export default function Search() {
   //TODO - ADD ON ENTER FUNCTIONALITY
 
   return (
-    <div className='w-full flex bg-green-500 text-gray-800 p-4'>
-      <form className='w-full'>
+    <div className='w-full flex text-gray-800 p-4'>
+      <form className='w-full border-blue-800 border-2 border-r-0 rounded-md overflow-hidden rounded-r-none'>
         <input
           placeholder='Search bar'
-          className='border-gray-200 border rounded-md p-3 bg-white rounded-r-none w-full'
+          className=' p-3 bg-white  w-full'
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </form>
       <button
-        className='p-3 bg-indigo-600 rounded-md text-gray-50 rounded-l-none cursor-pointer'
+        className='p-3 bg-blue-800 rounded-md text-gray-50 rounded-l-none cursor-pointer'
         onClick={handleSearch}
       >
         <svg

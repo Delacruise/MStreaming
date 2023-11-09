@@ -24,37 +24,37 @@ export default function Artists() {
   if (artistsData.length != 0) {
     return (
       <>
-        <h1 className='tracking-wider font-semibold text-2xl pb-8'>
-          Top Artists
-        </h1>
+        <h1 className='title'>Top Artists</h1>
         <div className='playlist__scroller flex gap-4 overflow-x-auto'>
           {artistsData.map((artist) => (
             <a href={`/pages/artist?id=${artist.id}`} key={artist.id}>
-              <div
-                key={artist.id}
-                className='p-4 rounded-md p-2 bg-white h-full drop-shadow-md inline-block'
-              >
+              <div key={artist.id} className='card'>
                 <Image
                   src={artist.picture_medium}
                   alt={artist.name}
                   width={250}
                   height={250}
-                  className='playlist__img rounded-md rounded-b-none w-max'
+                  className='playlist__img rounded-md w-max'
                 />
-                <div className='bg-yellow-600 rounded-t-none rounded-md p-4'>
-                  <h2 className='playlist__title text-white text-xl font-bold truncate'>
-                    {artist.name}
-                  </h2>
+                <div className='p-4'>
+                  <h2 className='cardTitle '>{artist.name}</h2>
                 </div>
               </div>
             </a>
           ))}
           <a href='/pages/artists'>
-            <div className='p-4 rounded-md p-2 bg-white h-full drop-shadow-md inline-block default-width mr-4'>
-              <div className='bg-yellow-600 rounded-md p-4 h-full'>
-                <h2 className='playlist__title text-white text-xl font-bold text-center h-full'>
-                  View all
-                </h2>
+            <div className='card mr-4'>
+              <div>
+                <Image
+                  src='/Default.jpg'
+                  alt='View All'
+                  width={250}
+                  height={250}
+                  className='playlist__img rounded-md w-max'
+                />
+              </div>
+              <div className='p-4'>
+                <h2 className='cardTitle'>View all</h2>
               </div>
             </div>
           </a>
